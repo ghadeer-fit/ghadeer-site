@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Reset & Shape Program — 4 أسابيع كاملة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+PRINT SETUP
+============================================================ */
+@page {
+size: A4;
+margin: 12mm 10mm;
+}
+
+@media print {
+
+- {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  }
+
+/* Hide navigation in print */
+.screen-nav, .screen-only { display: none !important; }
+
+/* Show all sections */
+.week-block, .day-block { display: block !important; }
+
+/* Page breaks */
+.week-block { page-break-before: always; }
+.week-block:first-child { page-break-before: avoid; }
+.day-block { page-break-inside: avoid; }
+.program-cover { page-break-after: always; }
+
+/* Links: show URL after video buttons */
+.yt-btn::after {
+content: “ — “ attr(href);
+font-size: 9px;
+color: #888;
+font-weight: 400;
+}
+
+body { font-size: 13px; }
+.content-wrap { padding: 0; }
+}
+
+/* ============================================================
+FORCE DARK — block browser color-scheme overrides
+============================================================ */
+:root {
+color-scheme: dark;
+forced-color-adjust: none;
+}
+
+/* Hard-reset any light-mode UA overrides */
+@media (prefers-color-scheme: light) {
+:root { color-scheme: dark; }
+html  { background: #0f0f13 !important; color: #f0ede6 !important; }
+}
+
+/* ============================================================
+SCREEN BASE — ALL COLORS EXPLICIT
+============================================================ */
+:root {
+–bg:      #0f0f13;
+–surface: #17171e;
+–card:    #1c1c26;
+–border:  #2e2e3e;
+–gold:    #c8a96e;
+–gold2:   #e8c98e;
+–text:    #f0ede6;
+–muted:   #8a8698;
+
+–lower-bg:  #2a1550;
+–lower-bd:  #7c4dbd;
+–upper-bg:  #122535;
+–upper-bd:  #3d9bc4;
+–rest-bg:   #0f2518;
+–rest-bd:   #3dbd7a;
+–nutri-bg:  #2a1810;
+–nutri-bd:  #c4703d;
+–deload-bg: #1a1020;
+–deload-bd: #c8a96e;
+
+–r: 10px;
+}
+
+*, *::before, *::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+/* Prevent browser from injecting its own colors */
+forced-color-adjust: none;
+}
+
+html {
+scroll-behavior: smooth;
+background-color: #0f0f13;
+color: #f0ede6;
+}
+
+body {
+background-color: #0f0f13;
+color: #f0ede6;
+font-family: ‘Cairo’, ‘Tajawal’, ‘Segoe UI’, Tahoma, sans-serif;
+font-size: 14px;
+line-height: 1.65;
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+}
+
+/* Lock all link colors globally — no browser defaults */
+a, a:link, a:visited, a:hover, a:active, a:focus {
+color: #ff8080;
+text-decoration: none;
+}
+
+/* ============================================================
+SCREEN NAV
+============================================================ */
+.screen-nav {
+position: sticky;
+top: 0;
+z-index: 100;
+background-color: #0d0d11;
+border-bottom: 1px solid #3a3020;
+display: flex;
+gap: 0;
+overflow-x: auto;
+scrollbar-width: none;
+}
+.screen-nav::-webkit-scrollbar { display: none; }
+
+.snav-btn {
+flex-shrink: 0;
+padding: 11px 18px;
+font-family: ‘Cairo’, ‘Tajawal’, sans-serif;
+font-size: 13px;
+font-weight: 600;
+color: #8a8698;
+background-color: transparent;
+border: none;
+border-bottom: 2px solid transparent;
+cursor: pointer;
+transition: all 0.2s;
+white-space: nowrap;
+}
+.snav-btn:hover { color: #f0ede6; background-color: transparent; }
+.snav-btn.w1 { border-bottom-color: #7c4dbd; color: #c49de8; background-color: transparent; }
+.snav-btn.w2 { border-bottom-color: #3d9bc4; color: #82cde8; background-color: transparent; }
+.snav-btn.w3 { border-bottom-color: #e87070; color: #e8a0a0; background-color: transparent; }
+.snav-btn.w4 { border-bottom-color: #c8a96e; color: #e8c98e; background-color: transparent; }
+
+/* ============================================================
+COVER PAGE
+============================================================ */
+.program-cover {
+background: linear-gradient(150deg, #110822 0%, #091525 45%, #150d04 100%);
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+min-height: 280px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 50px 24px 40px;
+border-bottom: 2px solid #c8a96e;
+position: relative;
+overflow: hidden;
+}
+.program-cover::before {
+content: ‘’;
+position: absolute; inset: 0;
+background: radial-gradient(ellipse at 50% 0%, #2a2010 0%, transparent 65%);
+}
+.cover-badge {
+display: inline-block;
+background: #2a2010;
+border: 1px solid #504020;
+color: #c8a96e;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 3px;
+padding: 5px 18px;
+border-radius: 20px;
+margin-bottom: 18px;
+position: relative;
+}
+.cover-title {
+font-size: 36px;
+font-weight: 900;
+color: #e8c98e;
+position: relative;
+margin-bottom: 8px;
+}
+.cover-sub {
+font-size: 15px;
+color: #8a8698;
+margin-bottom: 28px;
+position: relative;
+}
+.cover-stats {
+display: flex;
+gap: 16px;
+flex-wrap: wrap;
+justify-content: center;
+position: relative;
+}
+.cover-stat {
+background-color: #1e1e2a;
+border: 1px solid #4a3a18;
+border-radius: 10px;
+padding: 10px 20px;
+text-align: center;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.cs-val { font-size: 17px; font-weight: 700; color: #c8a96e; }
+.cs-lbl { font-size: 11px; color: #8a8698; margin-top: 2px; }
+
+/* ============================================================
+CONTENT WRAPPER
+============================================================ */
+.content-wrap { padding: 0 12px 40px; max-width: 780px; margin: 0 auto; }
+
+/* ============================================================
+WEEK HEADER
+============================================================ */
+.week-block { padding-top: 10px; }
+
+.week-header {
+padding: 22px 22px 18px;
+margin: 18px 0 14px;
+border-radius: 10px;
+position: relative;
+overflow: hidden;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.week-header.w1 { background: linear-gradient(135deg, #1e0a40, #0e1c35); border: 1.5px solid #7c4dbd; }
+.week-header.w2 { background: linear-gradient(135deg, #0c2035, #1c300e); border: 1.5px solid #3d9bc4; }
+.week-header.w3 { background: linear-gradient(135deg, #35100a, #0e1c35); border: 1.5px solid #e87070; }
+.week-header.w4 { background: linear-gradient(135deg, #201020, #0e1010); border: 1.5px solid #c8a96e; }
+
+.week-num  { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: #9a96a8; margin-bottom: 4px; }
+.week-title { font-size: 22px; font-weight: 800; color: #f0ede6; }
+.week-desc  { font-size: 13px; color: #8a8698; margin-top: 3px; }
+.week-emoji { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); font-size: 38px; }
+
+.progress-row { display: flex; gap: 4px; margin-top: 14px; }
+.prog-dot {
+flex: 1; height: 5px; border-radius: 3px;
+background: #27272b;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.prog-dot.filled { background: #c8a96e; }
+
+/* ============================================================
+DAY BLOCK
+============================================================ */
+.day-block {
+background-color: #1c1c26;
+border: 1px solid #2e2e3e;
+border-radius: 10px;
+margin-bottom: 12px;
+overflow: hidden;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+
+.day-head {
+display: flex;
+align-items: center;
+gap: 14px;
+padding: 13px 16px;
+border-bottom: 1px solid #2e2e3e;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.day-head.lower { background: linear-gradient(90deg, #2a1550, #1c1c26); border-right: 3px solid #7c4dbd; }
+.day-head.upper { background: linear-gradient(90deg, #122535, #1c1c26); border-right: 3px solid #3d9bc4; }
+.day-head.rest  { background: linear-gradient(90deg, #0f2518, #1c1c26); border-right: 3px solid #3dbd7a; }
+.day-head.nutri { background: linear-gradient(90deg, #2a1810, #1c1c26); border-right: 3px solid #c4703d; }
+.day-head.deload { background: linear-gradient(90deg, #1a1020, #1c1c26); border-right: 3px solid #c8a96e; }
+
+.day-icon { font-size: 22px; flex-shrink: 0; color: #f0ede6; }
+.day-info { flex: 1; }
+.day-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #7a7688; }
+.day-name  { font-size: 16px; font-weight: 800; line-height: 1.2; color: #f0ede6; }
+.day-sub   { font-size: 12px; color: #8a8698; }
+
+/* ============================================================
+SECTION TITLE
+============================================================ */
+.sec-title {
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 2.5px;
+color: #c8a96e;
+padding: 10px 16px 5px;
+text-transform: uppercase;
+}
+
+/* ============================================================
+INFO BOX (warmup / notes)
+============================================================ */
+.info-box {
+margin: 0 16px 10px;
+padding: 10px 13px;
+background-color: #1e1e2a;
+border: 1px solid #2e2e3e;
+border-radius: 8px;
+font-size: 12px;
+color: #8a8698;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.info-box b { color: #f0ede6; }
+.info-box.gold  { background-color: #201808; border-color: #5a4018; color: #e8c98e; }
+.info-box.green { background-color: #0a1f12; border-color: #1a5530; color: #90e0b8; }
+.info-box.red   { background-color: #1f0a0a; border-color: #5a1818; color: #e09090; }
+
+/* ============================================================
+EXERCISE ROW
+============================================================ */
+.ex-table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 6px;
+}
+.ex-table thead tr {
+background: #202010;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.ex-table th {
+padding: 7px 10px;
+font-size: 10px;
+font-weight: 700;
+color: #c8a96e;
+letter-spacing: 1px;
+text-align: right;
+border-bottom: 1px solid #2a2010;
+}
+.ex-table th:last-child { text-align: center; width: 60px; }
+.ex-table td {
+padding: 8px 10px;
+font-size: 13px;
+color: #f0ede6;
+border-bottom: 1px solid #2a2a3a;
+vertical-align: middle;
+background-color: transparent;
+}
+.ex-table tr:last-child td { border-bottom: none; }
+.ex-table tr:hover td { background: #131317; }
+
+.ex-num {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 22px; height: 22px;
+border-radius: 50%;
+background: #2a2010;
+color: #c8a96e;
+font-size: 11px;
+font-weight: 700;
+margin-left: 8px;
+flex-shrink: 0;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.ex-name-cell { display: flex; align-items: center; }
+.ex-name { font-weight: 700; font-size: 13px; color: #f0ede6; }
+.ex-note { font-size: 11px; color: #8a8698; margin-top: 2px; }
+.ex-sets { color: #c8a96e; font-weight: 700; font-size: 12px; white-space: nowrap; }
+.ex-rest { font-size: 11px; color: #8a8698; }
+
+/* upgrade tag */
+.utag {
+display: inline-block;
+background: #0f2a18;
+border: 1px solid #164028;
+color: #70dea0;
+font-size: 9px;
+font-weight: 700;
+padding: 1px 5px;
+border-radius: 4px;
+margin-right: 5px;
+vertical-align: middle;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.dtag {
+display: inline-block;
+background: #2a2010;
+border: 1px solid #3a2e1a;
+color: #c8a96e;
+font-size: 9px;
+font-weight: 700;
+padding: 1px 5px;
+border-radius: 4px;
+margin-right: 5px;
+vertical-align: middle;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+
+/* YouTube button — all link states locked */
+.yt-btn,
+.yt-btn:link,
+.yt-btn:visited,
+.yt-btn:hover,
+.yt-btn:active,
+.yt-btn:focus {
+display: inline-flex;
+align-items: center;
+gap: 4px;
+background-color: #3a0808;
+border: 1px solid #8a2020;
+color: #ff8080 !important;
+font-size: 11px;
+font-weight: 700;
+padding: 4px 8px;
+border-radius: 6px;
+text-decoration: none !important;
+white-space: nowrap;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+transition: background-color 0.2s;
+}
+.yt-btn:hover { background-color: #5a1010; }
+.yt-icon { font-size: 13px; color: #ff8080; }
+
+/* ============================================================
+CORE BOX
+============================================================ */
+.core-box {
+margin: 4px 16px 12px;
+padding: 12px 14px;
+background: #1c1c10;
+border: 1px solid #2a2212;
+border-radius: 8px;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.core-title { font-size: 11px; font-weight: 700; color: #c8a96e; letter-spacing: 1.5px; margin-bottom: 8px; }
+.core-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 4px 0;
+border-bottom: 1px solid #2a2a3a;
+font-size: 12px;
+color: #f0ede6;
+}
+.core-row:last-child { border-bottom: none; }
+.core-sets { color: #e8c98e; font-weight: 700; font-size: 11px; }
+
+/* ============================================================
+CARDIO BOX
+============================================================ */
+.cardio-box {
+margin: 4px 16px 12px;
+padding: 10px 14px;
+background: #0a1c10;
+border: 1px solid #0f2a18;
+border-radius: 8px;
+font-size: 12px;
+color: #90e0b8;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+
+/* ============================================================
+AVOID BOX
+============================================================ */
+.avoid-box {
+margin: 4px 16px 12px;
+padding: 10px 14px;
+background: #1c0c0c;
+border: 1px solid #2c1010;
+border-radius: 8px;
+font-size: 12px;
+color: #e09090;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.avoid-title { font-weight: 700; color: #ff9090; margin-bottom: 5px; }
+.avoid-list { list-style: none; }
+.avoid-list li::before { content: ’✗  ’; }
+
+/* ============================================================
+MACRO TABLE
+============================================================ */
+.macro-wrap { padding: 0 16px 12px; }
+.macro-table {
+width: 100%;
+border-collapse: collapse;
+border-radius: 8px;
+overflow: hidden;
+font-size: 13px;
+}
+.macro-table th {
+background: #2a2010;
+color: #c8a96e;
+padding: 9px 12px;
+text-align: center;
+font-size: 11px;
+font-weight: 700;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.macro-table td {
+padding: 9px 12px;
+text-align: center;
+color: #f0ede6;
+background-color: #1c1c26;
+border-bottom: 1px solid #2a2a3a;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.macro-table tr:last-child td { border-bottom: none; }
+.macro-val { color: #c8a96e; font-weight: 700; }
+
+/* ============================================================
+MEAL CARDS
+============================================================ */
+.meal-grid { padding: 0 16px 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 520px) { .meal-grid { grid-template-columns: 1fr; } }
+
+.meal-card {
+background: #131317;
+border: 1px solid #1d1d21;
+border-radius: 8px;
+overflow: hidden;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.meal-head {
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 9px 12px;
+background-color: #3a2010;
+border-bottom: 1px solid #5a3018;
+font-size: 13px;
+font-weight: 700;
+color: #f0ede6;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.meal-body { padding: 10px 12px; font-size: 12px; color: #8a8698; }
+.meal-item { padding: 2px 0; }
+.meal-item::before { content: ’• ’; color: #c8a96e; }
+.alt-lbl {
+display: inline-block;
+background: #252010;
+border: 1px solid #352a18;
+color: #c8a96e;
+font-size: 10px;
+padding: 1px 6px;
+border-radius: 4px;
+margin: 6px 0 3px;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+
+/* ============================================================
+REST / TIPS GRID
+============================================================ */
+.tips-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 8px;
+padding: 0 16px 14px;
+}
+@media (max-width: 480px) { .tips-grid { grid-template-columns: 1fr 1fr; } }
+
+.tip-card {
+background-color: #1e1e2a;
+border: 1px solid #2e2e3e;
+border-radius: 8px;
+padding: 12px 8px;
+text-align: center;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.tip-icon  { font-size: 20px; margin-bottom: 5px; }
+.tip-val   { font-size: 13px; font-weight: 700; color: #c8a96e; }
+.tip-lbl   { font-size: 10px; color: #8a8698; margin-top: 2px; }
+
+/* ============================================================
+RESULTS / FINAL PAGE
+============================================================ */
+.results-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 8px;
+padding: 0 16px 12px;
+}
+.result-card {
+background-color: #201a0a;
+border: 1px solid #4a3a18;
+border-radius: 8px;
+padding: 14px;
+text-align: center;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.result-icon  { font-size: 26px; margin-bottom: 6px; }
+.result-title { font-size: 14px; font-weight: 700; color: #c8a96e; }
+.result-sub   { font-size: 11px; color: #8a8698; margin-top: 3px; }
+
+/* Final banner */
+.final-banner {
+margin: 0 16px 20px;
+padding: 18px;
+background-color: #201808;
+border: 1px solid #6a5028;
+border-radius: 10px;
+text-align: center;
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+.final-banner h3 { font-size: 16px; color: #e8c98e; margin-bottom: 6px; }
+.final-banner p  { font-size: 12px; color: #8a8698; }
+
+/* ============================================================
+DIVIDER
+============================================================ */
+.divider {
+height: 1px;
+background: #2e2e3e;
+margin: 0 16px 12px;
+}
+
+/* ============================================================
+PRINT FOOTER per page
+============================================================ */
+.print-footer {
+display: none;
+}
+@media print {
+.print-footer {
+display: block;
+text-align: center;
+font-size: 9px;
+color: #666;
+padding: 8px 0 0;
+border-top: 1px solid #333;
+margin-top: 12px;
+}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SCREEN NAV
+     ============================================================ -->
+
+<nav class="screen-nav screen-only">
+  <button class="snav-btn" onclick="document.getElementById('info-pages').scrollIntoView({behavior:'smooth'})" style="color:#8aa8d8;border-bottom:2px solid #5a7abd;">📋 دليل البرنامج</button>
+  <button class="snav-btn w1" onclick="document.getElementById('week1').scrollIntoView({behavior:'smooth'})">الأسبوع ١</button>
+  <button class="snav-btn w2" onclick="document.getElementById('week2').scrollIntoView({behavior:'smooth'})">الأسبوع ٢</button>
+  <button class="snav-btn w3" onclick="document.getElementById('week3').scrollIntoView({behavior:'smooth'})">الأسبوع ٣</button>
+  <button class="snav-btn w4" onclick="document.getElementById('week4').scrollIntoView({behavior:'smooth'})">الأسبوع ٤ + Deload</button>
+  <button class="snav-btn"   onclick="document.getElementById('nutrition').scrollIntoView({behavior:'smooth'})">🥗 التغذية</button>
+  <button class="snav-btn"   onclick="window.print()" style="color:#c8a96e;margin-right:auto;">🖨️ طباعة</button>
+</nav>
+
+<!-- ============================================================
+     COVER
+     ============================================================ -->
+
+<div class="program-cover">
+  <div class="cover-badge">RESET &amp; SHAPE PROGRAM</div>
+  <div class="cover-title">برنامج ٤ أسابيع</div>
+  <div class="cover-sub">نزول صحي · شد · رفع الأرداف · تقوية البطن بأمان بعد الولادة</div>
+  <div class="cover-stats">
+    <div class="cover-stat"><div class="cs-val">5 أيام</div><div class="cs-lbl">تمرين أسبوعي</div></div>
+    <div class="cover-stat"><div class="cs-val">2–4 كجم</div><div class="cs-lbl">نزول متوقع · حسب الالتزام</div></div>
+    <div class="cover-stat" style="max-width:200px;">
+      <div class="cs-val">1700–1750</div>
+      <div class="cs-lbl">سعرات أيام التمرين</div>
+      <div style="font-size:10px;color:#6a6050;margin-top:4px;line-height:1.5;">مجموع أكلك اليومي — التزمي بالجدول بدون زيادة أو نقص</div>
+    </div>
+    <div class="cover-stat"><div class="cs-val">135 جم</div><div class="cs-lbl">بروتين يومي</div></div>
+    <div class="cover-stat"><div class="cs-val">2.5–3 لتر</div><div class="cs-lbl">ماء يومي</div></div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+<!-- ████████████████████████████████████████████████████████
+     INFO PAGES — 9 صفحات تعريفية
+     ████████████████████████████████████████████████████████ -->
+
+<div class="week-block" id="info-pages">
+
+  <!-- INFO HEADER -->
+
+  <div class="week-header" style="background:linear-gradient(135deg,#0e1a2e,#1a0e2e,#0e150a);border:1.5px solid #5a7abd;margin-bottom:18px;">
+    <div class="week-num" style="color:#8aa0d8;">PROGRAM GUIDE · دليل البرنامج</div>
+    <div class="week-title" style="color:#c8d8f8;">معلومات البرنامج الكاملة</div>
+    <div class="week-desc" style="color:#7a8aa8;">اقرئيها مرة واحدة — تجيبك كل الأجوبة</div>
+    <div class="week-emoji">📋</div>
+    <div class="progress-row">
+      <div class="prog-dot" style="background:#5a7abd;"></div>
+      <div class="prog-dot" style="background:#5a7abd;"></div>
+      <div class="prog-dot" style="background:#5a7abd;"></div>
+      <div class="prog-dot" style="background:#5a7abd;"></div>
+    </div>
+  </div>
+
+  <!-- PAGE 1 — لمن هذا البرنامج -->
+
+  <div class="day-block">
+    <div class="day-head" style="background:linear-gradient(90deg,#1a2535,#1c1c26);border-right:3px solid #5a9bd4;border-bottom:1px solid #2e2e3e;">
+      <div class="day-icon">📌</div>
+      <div class="day-info">
+        <div class="day-label" style="color:#5a9bd4;">PAGE 1</div>
+        <div class="day-name">لمن هذا البرنامج؟</div>
+      </div>
+    </div>
+    <div style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#0f2010;border:1px solid #2a5a2a;border-radius:8px;padding:14px;">
+        <div style="color:#50c060;font-size:12px;font-weight:800;letter-spacing:1.5px;margin-bottom:10px;">✅ مناسب لك إذا</div>
+        <div style="font-size:13px;color:#c0e8c8;line-height:2;">
+          <div>• تبغي تنزلي دهون وتشدي جسمك</div>
+          <div>• عندك وقت 4–5 أيام أسبوعيًا</div>
+          <div>• مبتدئة أو مستوى متوسط</div>
+        </div>
+      </div>
+      <div style="background:#200f0f;border:1px solid #5a2020;border-radius:8px;padding:14px;">
+        <div style="color:#e06060;font-size:12px;font-weight:800;letter-spacing:1.5px;margin-bottom:10px;">⚠️ غير مناسب إذا</div>
+        <div style="font-size:13px;color:#e8c0c0;line-height:2;">
+          <div>• عندك إصابة قوية</div>
+          <div>• مشاكل ظهر أو مفاصل</div>
+          <div>• بدون متابعة طبية</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2 — الهدف -->
+
+  <div class="day-block">
+    <div class="day-head" style="background:linear-gradient(90deg,#1a2010,#1c1c26);border-right:3px solid #5abd7a;border-bottom:1px solid #2e2e3e;">
+      <div class="day-icon">🎯</div>
+      <div class="day-info">
+        <div class="day-label" style="color:#5abd7a;">PAGE 2</div>
+        <div class="day-name">الهدف من البرنامج</div>
+      </div>
+    </div>
+    <div style="padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:#0f1c10;border:1px solid #2a4a2a;border-radius:8px;padding:14px;">
+        <div style="color:#60c870;font-size:11px;font-weight:800;letter-spacing:1.5px;margin-bottom:10px;">هدف البرنامج</div>
+        <div style="font-size:13px;color:#c0e8c8;line-height:2.1;">
+          <div>• نزول دهون تدريجي</div>
+          <div>• شد الجسم وتحسين الشكل</div>
+          <div>• الحفاظ على العضلات</div>
+        </div>
+      </div>
+      <div style="background:#201808;border:1px solid #5a4018;border-radius:8px;padding:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+        <div style="font-size:32px;font-weight:900;color:#c8a96e;line-height:1;">2–4</div>
+        <div style="font-size:16px;font-weight:700;color:#e8c98e;margin-top:4px;">كجم</div>
+        <div style="font-size:11px;color:#8a7858;margin-top:6px;">النزول المتوقع خلال 4 أسابيع</div>
+        <div style="font-size:10px;color:#6a5838;margin-top:3px;">(حسب الالتزام)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3 — قواعد الالتزام -->
+
+  <div class="day-block">
+    <div class="day-head" style="background:linear-gradient(90deg,#20100a,#1c1c26);border-right:3px solid #c4703d;border-bottom:1px solid #2e2e3e;">
+      <div class="day-icon">⚠️</div>
+      <div class="day-info">
+        <div class="day-label" style="color:#c4703d;">PAGE 3</div>
+        <div class="day-name">قواعد الالتزام</div>
+      </div>
+    </div>
+    <div style="padding:14px 16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:#201808;border:1px solid #4a3010;border-radius:8px;padding:12px;display:flex;align-items:flex-start;gap:10px;">
+          <span style="font-size:18px;flex-shrink:0;">📋</span>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#c8a96e;margin-bottom:3px;">التزمي بالجدول كما هو</div>
+            <div style="font-size:11px;color:#8a7858;">لا تغيّري ترتيب الأيام أو التمارين</div>
+          </div>
+        </div>
+        <div style="background:#201808;border:1px solid #4a3010;border-radius:8px;padding:12px;display:flex;align-items:flex-start;gap:10px;">
+          <span style="font-size:18px;flex-shrink:0;">⚖️</span>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#c8a96e;margin-bottom:3px;">الوزن بعد التكنيك فقط</div>
+            <div style="font-size:11px;color:#8a7858;">لا ترفعي الوزن إلا إذا التكنيك صحيح</div>
+          </div>
+        </div>
+        <div style="background:#201808;border:1px solid #4a3010;border-radius:8px;padding:12px;display:flex;align-items:flex-start;gap:10px;">
+          <span style="font-size:18px;flex-shrink:0;">🏆</span>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#c8a96e;margin-bottom:3px;">الالتزام أهم من الكمال</div>
+            <div style="font-size:11px;color:#8a7858;">يوم ناقص أفضل من يوم ملغي</div>
+          </div>
+        </div>
+        <div style="background:#201808;border:1px solid #4a3010;border-radius:8px;padding:12px;display:flex;align-items:flex-start;gap:10px;">
+          <span style="font-size:18px;flex-shrink:0;">😴</span>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#c8a96e;margin-bottom:3px;">النوم والماء جزء من النتيجة</div>
+            <div style="font-size:11px;color:#8a7858;">7 ساعات نوم + 3 لتر ماء يوميًا</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 4 — تمارين البطن -->
+
+  <div class="day-block">
+    <div class="day-head" style="background:linear-gradient(90deg,#1a1535,#1c1c26);border-right:3px solid #7c4dbd;border-bottom:1px solid #2e2e3e;">
+      <div class="day-icon">🧠</div>
+      <div class="day-info">
+        <div class="day-label" style="color:#9a7ad8;">PAGE 4</div>
+        <div class="day-name">تمارين البطن — مهم جدًا</div>
+      </div>
+    </div>
+    <div style="padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:#200f1a;border:1px solid #5a2040;border-radius:8px;padding:13px;">
+        <div style="color:#e06090;font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:8px;">❌ نتجنب هذه التمارين</div>
+        <div style="font-size:13px;color:#e8b8c8;line-height:2.1;">
+          <div>• Sit-ups</div>
+          <div>• Crunch ثقيل</div>
+          <div>• Russian Twists بوزن</div>
+          <div>• Leg Raise عنيف</div>
+        </div>
+      </div>
+      <div style="background:#0f1520;border:1px solid #204060;border-radius:8px;padding:13px;">
+        <div style="color:#60a0e8;font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:8px;">✅ نستخدم هذه البدائل</div>
+        <div style="font-size:13px;color:#b8d0e8;line-height:2.1;">
+          <div>• Dead Bug</div>
+          <div>• Bird Dog</div>
+          <div>• Pallof Press</div>
+          <div>• TVA Breathing</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin:0 16px 14px;padding:10px 13px;background:#150f20;border:1px solid #3a2a50;border-radius:8px;font-size:12px;color:#9a88b8;">
+      <b style="color:#c8b8e8;">السبب:</b> لحماية عضلات البطن وتقليل الضغط عليها — خصوصًا بعد الولادة
+    </div>
+  </div>
+
+  <!-- PAGE 5 — الكارديو -->
+
+  <div class="day-block">
+    <div class="day-head" style="background:linear-gradient(90deg,#0f2018,#1c1c26);border-right:3px solid #3dbd7a;border-bottom:1px solid #2e2e3e;">
+      <div class="day-icon">🏃‍♀️</div>
+      <div class="day-info">
+        <div class="day-label" style="color:#3dbd7a;">PAGE 5</div>
+        <div class="day-name">الكارديو</div>
+      </div>
+    </div>
+    <div style="padding:14px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+      <div style="background:#0a1c10;border:1px solid #1a4a28;border-radius:8px;padding:14px;text-align:center;">
+        <div style="font-size:28px;font-weight:900;color:#3dbd7a;">10–15</div>
+        <div style="font-size:12px;color:#50c870;font-weight:700;margin-top:2px;">دقيقة</div>
+        <div style="font-size:11px;color:#5a8a68;margin-top:5px;">بعد التمرين مباشرة</div>
+      </div>
+      <div style="background:#0a1c10;border:1px solid #1a4a28;border-radius:8px;padding:14px;text-align:center;">
+        <div style="font-size:28px;font-weight:900;color:#3dbd7a;">20–30</div>
+        <div style="font-size:12px;color:#50c870;font-weight:700;margin-top:2px;">دقيقة</div>
+        <div style="font-size:11px;color:#5a8a68;margin-top:5px;">أيام الراحة النشطة</div>
+      </div>
+      <div style="background:#0a1c10;border:1px solid #1a4a28;border-radius:8px;padding:14px;text-align:center;">
+        <div style="font-size:22px;margin-bottom:5px;">🚫</div>
+        <div style="font-size:11px;color:#e09090;font-weight:700;">ممنوع</div>
+        <div style="font-size:11px;color:#8a6868;margin-top:4px;">HIIT · قفزات</div>
+      </div>
+    </div>
+    <div style="margin:0 16px 14px;padding:10px 13px;background:#0a1c10;border:1px solid #1a4a28;border-radius:8px;font-size:12px;color:#70b888;">
+      <b style="color:#90d8a8;">الأفضل:</b> Stairmaster ← مشي مائل ← Elliptical
+    </div>
+  </div>
+
+  <!-- PAGE 6 — فهم النظام الغذائي -->
+
+  <div class="day-block">
+    <div class="day-head" style="background:linear-gradient(90deg,#201808,#1c1c26);border-right:3px solid #c4703d;border-bottom:1px solid #2e2e3e;">
+      <div class="day-icon">🍽️</div>
+      <div class="day-info">
+        <div class="day-label" style="color:#c4703d;">PAGE 6</div>
+        <div class="day-name">فهم النظام الغذائي</div>
+      </div>
+    </div>
+    <div style="padding:14px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+      <div style="background:#1a1008;border:1px solid #4a3010;border-radius:8px;padding:13px;text-align:center;">
+        <div style="font-size:24px;margin-bottom:6px;">🥩</div>
+        <div style="font-size:14px;font-weight:800;color:#e8a860;margin-bottom:5px;">البروتين</div>
+        <div style="font-size:11px;color:#a08060;line-height:1.7;">للحفاظ على العضلات أثناء نزول الوزن</div>
+      </div>
+      <div style="background:#1a1008;border:1px solid #4a3010;border-radius:8px;padding:13px;text-align:center;">
+        <div style="font-size:24px;margin-bottom:6px;">🍚</div>
+        <div style="font-size:14px;font-weight:800;color:#e8a860;margin-bottom:5px;">الكارب</div>
+        <div style="font-size:11px;color:#a08060;line-height:1.7;">للطاقة أثناء التمرين والنشاط اليومي</div>
+      </div>
+      <div style="background:#1a1008;border:1px solid #4a3010;border-radius:8px;padding:13px;text-align:center;">
+        <div style="font-size:24px;margin-bottom:6px;">🥑</div>
+        <div style="font-size:14px;font-weight:800;color:#e8a860;margin-bottom:5px;">الدهون</div>
+        <div style="font-size:11px;color:#a08060;line-height:1.7;">لدعم الهرمونات وصحة الجسم العامة</div>
+      </div>
+    </div>
+    <div style="margin:0 16px 14px;padding:10px 13px;background:#201808;border:1px solid #5a3818;border-radius:8px;font-size:12px;color:#c8a870;">
+      <b style="color:#e8c890;">💡 مهم:</b> اختاري نموذج غذائي واحد يوميًا فقط · لا تجمعي بين أكثر من نموذج
+    </div>
+  </div>
+
+  <!-- PAGE 7 — المتابعة -->
+
+  <div class="day-block">
+    <div class="day-head" style="background:linear-gradient(90deg,#101828,#1c1c26);border-right:3px solid #3d9bc4;border-bottom:1px solid #2e2e3e;">
+      <div class="day-icon">📏</div>
+      <div class="day-info">
+        <div class="day-label" style="color:#3d9bc4;">PAGE 7</div>
+        <div class="day-name">المتابعة الأسبوعية</div>
+      </div>
+    </div>
+    <div style="padding:14px 16px;">
+      <div style="background:#0e1820;border:1px solid #1e3848;border-radius:8px;padding:14px;margin-bottom:10px;">
+        <div style="font-size:12px;color:#3d9bc4;font-weight:800;letter-spacing:1.5px;margin-bottom:12px;">📅 كل أسبوع ترسلي</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+          <div style="background:#141e28;border:1px solid #2a4858;border-radius:6px;padding:10px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">⚖️</div>
+            <div style="font-size:12px;font-weight:700;color:#82cde8;">الوزن</div>
+            <div style="font-size:10px;color:#4a6878;margin-top:2px;">على الريق صباحًا</div>
+          </div>
+          <div style="background:#141e28;border:1px solid #2a4858;border-radius:6px;padding:10px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">📐</div>
+            <div style="font-size:12px;font-weight:700;color:#82cde8;">قياس الخصر</div>
+            <div style="font-size:10px;color:#4a6878;margin-top:2px;">بالسنتيمتر</div>
+          </div>
+          <div style="background:#141e28;border:1px solid #2a4858;border-radius:6px;padding:10px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:4px;">📸</div>
+            <div style="font-size:12px;font-weight:700;color:#82cde8;">صورة</div>
+            <div style="font-size:10px;color:#4a6878;margin-top:2px;">أمامي + جانبي</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 8 — تعليمات الاستخدام -->
+
+  <div class="day-block">
+    <div class="day-head" style="background:linear-gradient(90deg,#181028,#1c1c26);border-right:3px solid #9a6dd8;border-bottom:1px solid #2e2e3e;">
+      <div class="day-icon">💬</div>
+      <div class="day-info">
+        <div class="day-label" style="color:#9a6dd8;">PAGE 8</div>
+        <div class="day-name">كيف تستخدمين البرنامج</div>
+      </div>
+    </div>
+    <div style="padding:14px 16px;">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;align-items:center;gap:12px;background:#16102a;border:1px solid #3a2858;border-radius:8px;padding:12px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:#3a2070;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#c8a8f8;flex-shrink:0;">١</div>
+          <div style="font-size:13px;color:#d0c0e8;">اختاري <b style="color:#e8d8ff;">نموذج غذائي واحد</b> يوميًا فقط</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;background:#16102a;border:1px solid #3a2858;border-radius:8px;padding:12px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:#3a2070;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#c8a8f8;flex-shrink:0;">٢</div>
+          <div style="font-size:13px;color:#d0c0e8;">لا تجمعي بين <b style="color:#e8d8ff;">أكثر من نموذج</b> في نفس اليوم</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;background:#16102a;border:1px solid #3a2858;border-radius:8px;padding:12px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:#3a2070;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#c8a8f8;flex-shrink:0;">٣</div>
+          <div style="font-size:13px;color:#d0c0e8;">التزمي بـ <b style="color:#e8d8ff;">نفس الكميات</b> المحددة بالجرام</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;background:#16102a;border:1px solid #3a2858;border-radius:8px;padding:12px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:#3a2070;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#c8a8f8;flex-shrink:0;">٤</div>
+          <div style="font-size:13px;color:#d0c0e8;">أي شيء مو واضح؟ <b style="color:#e8d8ff;">تواصلي مع مدربتك</b> مباشرة</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 9 — ماذا بعد -->
+
+  <div class="day-block">
+    <div class="day-head" style="background:linear-gradient(90deg,#201808,#0e1510,#1c1c26);border-right:3px solid #c8a96e;border-bottom:1px solid #2e2e3e;">
+      <div class="day-icon">✨</div>
+      <div class="day-info">
+        <div class="day-label" style="color:#c8a96e;">PAGE 9</div>
+        <div class="day-name">ماذا بعد انتهاء الـ 4 أسابيع؟</div>
+      </div>
+    </div>
+    <div style="padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:#201808;border:1px solid #5a4018;border-radius:8px;padding:16px;text-align:center;">
+        <div style="font-size:26px;margin-bottom:8px;">🔄</div>
+        <div style="font-size:14px;font-weight:800;color:#c8a96e;margin-bottom:6px;">الخيار الأول</div>
+        <div style="font-size:12px;color:#a08858;line-height:1.8;">نكمل <b style="color:#e8c890;">نفس الخطة</b> إذا النتائج ماشية وفيه مزيد للتطوير</div>
+      </div>
+      <div style="background:#0e1820;border:1px solid #2a4858;border-radius:8px;padding:16px;text-align:center;">
+        <div style="font-size:26px;margin-bottom:8px;">🚀</div>
+        <div style="font-size:14px;font-weight:800;color:#3d9bc4;margin-bottom:6px;">الخيار الثاني</div>
+        <div style="font-size:12px;color:#5a7888;line-height:1.8;">نطور البرنامج <b style="color:#82cde8;">حسب النتائج</b> مع رفع الشدة والأهداف</div>
+      </div>
+    </div>
+    <div style="margin:0 16px 14px;padding:14px;background:linear-gradient(135deg,#201808,#0e1820);border:1px solid #5a4828;border-radius:8px;text-align:center;">
+      <div style="font-size:13px;color:#c8a96e;font-weight:700;margin-bottom:4px;">🌟 القرار يعتمد على نتائجك وقياساتك</div>
+      <div style="font-size:12px;color:#8a7848;">بعد 4 أسابيع نراجع معًا ونبني الخطوة القادمة</div>
+    </div>
+  </div>
+
+</div><!-- end info-pages -->
+
+<!-- ████████████████████████████████████████████████████████
+     WEEK 1
+     ████████████████████████████████████████████████████████ -->
+
+<div class="week-block" id="week1">
+  <div class="week-header w1">
+    <div class="week-num">WEEK ONE · الأسبوع الأول</div>
+    <div class="week-title">البداية — تأسيس الحركة وتفعيل العضلات</div>
+    <div class="week-desc">تعلّم التكنيك · كارديو خفيف 10 دقائق · كور آمن</div>
+    <div class="week-emoji">🌱</div>
+    <div class="progress-row">
+      <div class="prog-dot filled"></div>
+      <div class="prog-dot"></div>
+      <div class="prog-dot"></div>
+      <div class="prog-dot"></div>
+    </div>
+  </div>
+
+  <!-- W1 D1 -->
+
+  <div class="day-block">
+    <div class="day-head lower">
+      <div class="day-icon">🍑</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الأول</div>
+        <div class="day-name">Lower A — Glute + Quad</div>
+        <div class="day-sub">الأرداف + الأمامي للفخذ</div>
+      </div>
+    </div>
+    <div class="sec-title">الإحماء</div>
+    <div class="info-box">
+      <b>5–7 دقائق:</b> مشي خفيف أو Elliptical — ثم: 10 Bodyweight Squat · 10 Glute Bridge · 10 Hip Hinge · 10 خطوة جانبية
+    </div>
+    <div class="sec-title">التمارين</div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Hip Thrust Machine</div><div class="ex-note">Hold فوق 2 ثا · الحوض يلف للأعلى · الذقن للداخل</div></div></div></td>
+          <td><span class="ex-sets">4 × 15/12/10/10</span></td>
+          <td><span class="ex-rest">75–90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/XpA9-JchTE4" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Hack Squat</div><div class="ex-note">القدم متوسطة–عالية · نزول 2–3 ثا · لا تقفل الركب</div></div></div></td>
+          <td><span class="ex-sets">4 × 10–12</span></td>
+          <td><span class="ex-rest">75–90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=0tn5K9NlCfo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Leg Press</div><div class="ex-note">القدم أعلى قليلًا من المنتصف · التركيز glute+quad</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=IZxyjW7MPJQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Leg Extension</div><div class="ex-note">توقف ثانية فوق · نزول بطيء</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=YyvSfVjQeL0" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Abductor Machine</div><div class="ex-note">ميل بسيط للأمام · افتحي بهدوء</div></div></div></td>
+          <td><span class="ex-sets">3 × 20</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/uwKOs7z3O3g" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE SAFE — ممنوع Crunch أو Sit-ups الآن</div>
+      <div class="core-row"><span>Dead Bug</span><span class="core-sets">3 × 8 لكل جهة</span></div>
+      <div class="core-row"><span>TVA Breathing</span><span class="core-sets">3 جولات × 5 أنفاس</span></div>
+    </div>
+    <div class="cardio-box">🏃‍♀️ <b>بعد التمرين:</b> Stairmaster أو مشي مائل · <b>10 دقائق فقط</b></div>
+  </div>
+
+  <!-- W1 D2 -->
+
+  <div class="day-block">
+    <div class="day-head upper">
+      <div class="day-icon">💪</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الثاني</div>
+        <div class="day-name">Upper Pull + Core Safe</div>
+        <div class="day-sub">سحب الجزء العلوي + كور آمن</div>
+      </div>
+    </div>
+    <div class="sec-title">الإحماء</div>
+    <div class="info-box"><b>5 دقائق:</b> Elliptical خفيف · تدوير الكتف × 10 · Band Pull-Apart × 10</div>
+    <div class="sec-title">التمارين</div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Lat Machine (Pulldown)</div><div class="ex-note">الكتف بعيد عن الأذن · اسحبي بالكوع</div></div></div></td>
+          <td><span class="ex-sets">4 × 10–12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=CAwf7n6Luuc" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Vertical Traction</div><div class="ex-note">نفس مبدأ Lat Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=CAwf7n6Luuc" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Low Row Machine</div><div class="ex-note">صدرك مرفوع · سحب للمعدة · توقف نصف ثانية</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=GZbfZ033f74" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Reverse Fly / Rear Delt</div><div class="ex-note">الحركة من الكتف لا الكوع</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/7tgx6QHB0-A" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Arm Curl (Bicep)</div><div class="ex-note">الكوع ثابت · لا تتأرجحي</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=ykJmrZ5v0Oo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE SAFE</div>
+      <div class="core-row"><span>Plank مرتفع أو على الركب</span><span class="core-sets">3 × 20–30 ثا</span></div>
+      <div class="core-row"><span>Pallof Press كابل</span><span class="core-sets">2 × 12 لكل جهة</span></div>
+    </div>
+  </div>
+
+  <!-- W1 D3 Rest -->
+
+  <div class="day-block">
+    <div class="day-head rest">
+      <div class="day-icon">🌿</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الثالث</div>
+        <div class="day-name">راحة نشطة</div>
+        <div class="day-sub">استشفاء + حرق خفيف</div>
+      </div>
+    </div>
+    <div class="info-box green" style="margin:12px 16px;">
+      🚶‍♀️ مشي خفيف 20–30 دقيقة أو Elliptical 15 دقيقة هادئ &nbsp;|&nbsp; تمارين تنفس 5 دقائق
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tip-icon">💧</div><div class="tip-val">3 لتر</div><div class="tip-lbl">ماء اليوم</div></div>
+      <div class="tip-card"><div class="tip-icon">🚶‍♀️</div><div class="tip-val">7000+</div><div class="tip-lbl">خطوة</div></div>
+      <div class="tip-card"><div class="tip-icon">😴</div><div class="tip-val">7 ساعات</div><div class="tip-lbl">نوم</div></div>
+      <div class="tip-card"><div class="tip-icon">🧘‍♀️</div><div class="tip-val">تمدد</div><div class="tip-lbl">فخذ + أرداف</div></div>
+    </div>
+  </div>
+
+  <!-- W1 D4 -->
+
+  <div class="day-block">
+    <div class="day-head lower">
+      <div class="day-icon">🔥</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الرابع</div>
+        <div class="day-name">Lower B — Glute + Hamstring</div>
+        <div class="day-sub">الأرداف + الخلفي للفخذ</div>
+      </div>
+    </div>
+    <div class="sec-title">الإحماء</div>
+    <div class="info-box"><b>5–7 دقائق:</b> Elliptical · 10 Glute Bridge · 10 Hip Hinge · Dead Bug × 5</div>
+    <div class="sec-title">التمارين</div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Romanian Deadlift — Smith</div><div class="ex-note">الظهر محايد · الورك للخلف · الركبة soft</div></div></div></td>
+          <td><span class="ex-sets">4 × 10</span></td>
+          <td><span class="ex-rest">90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=JCXUYuzwNrM" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Prone Leg Curl</div><div class="ex-note">نزول بطيء · توقف فوق · لا ترفعي الحوض</div></div></div></td>
+          <td><span class="ex-sets">4 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Orxowest56U" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Hip Thrust Machine</div><div class="ex-note">هنا التركيز على الإحساس أكثر من الوزن</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/XpA9-JchTE4" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Rear Kick Machine</div><div class="ex-note">الحركة من الورك · لا تميلي ظهرك · وقفة في النهاية</div></div></div></td>
+          <td><span class="ex-sets">3 × 12 / رجل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/_yxQwOeb6pg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Multi Hip Machine</div><div class="ex-note">وضعية glute kickback أو abduction</div></div></div></td>
+          <td><span class="ex-sets">3 × 12 / رجل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/YBWO5nTxCTg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٦</span><div><div class="ex-name">Abductor — Burnout</div><div class="ex-note">وزن خفيف · بدون توقف</div></div></div></td>
+          <td><span class="ex-sets">2 × 20</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/tu4o4quPv2k" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE SAFE</div>
+      <div class="core-row"><span>Heel Slides</span><span class="core-sets">2–3 × 10</span></div>
+      <div class="core-row"><span>Marching Core</span><span class="core-sets">2 × 10 / جهة</span></div>
+    </div>
+    <div class="cardio-box">🏃‍♀️ <b>بعد التمرين:</b> Stairmaster أو مشي مائل · <b>10 دقائق فقط</b></div>
+  </div>
+
+  <!-- W1 D5 -->
+
+  <div class="day-block">
+    <div class="day-head upper">
+      <div class="day-icon">✨</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الخامس</div>
+        <div class="day-name">Upper Push + Core Safe</div>
+        <div class="day-sub">دفع الجزء العلوي</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Chest Press Machine</div><div class="ex-note">الكتف مضغوط للأسفل</div></div></div></td>
+          <td><span class="ex-sets">3 × 10–12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=xUm0BiZCWlQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Pectoral / Chest Fly</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Z57CtFmRMxA" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Delts Machine (Lateral)</div></div></div></td>
+          <td><span class="ex-sets">3 × 12–15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=3VcKaXpzqRo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Arm Extension (Tricep)</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=2-LAMcpzODU" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE SAFE</div>
+      <div class="core-row"><span>Incline March</span><span class="core-sets">2 × 10 / رجل</span></div>
+      <div class="core-row"><span>Heel Tap</span><span class="core-sets">2 × 10 / جهة</span></div>
+      <div class="core-row"><span>Side Plank على الركب</span><span class="core-sets">2 × 20 ثا / جهة</span></div>
+    </div>
+  </div>
+
+  <!-- W1 D6 -->
+
+  <div class="day-block">
+    <div class="day-head lower">
+      <div class="day-icon">💎</div>
+      <div class="day-info">
+        <div class="day-label">اليوم السادس</div>
+        <div class="day-name">Lower C — Shape + Burn</div>
+        <div class="day-sub">نحت وشد — ليس يوم تكسير</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Leg Press Wide Stance</div><div class="ex-note">وقفة واسعة — يفعّل الداخلي والأرداف</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=IZxyjW7MPJQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Rear Kick Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 15 / رجل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/_yxQwOeb6pg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Abductor Machine</div></div></div></td>
+          <td><span class="ex-sets">4 × 20</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/uwKOs7z3O3g" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Adductor Machine</div><div class="ex-note">تضييق الداخلي للفخذ</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/fwpMYCWdUNY" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Multi Hip Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 12 / رجل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/YBWO5nTxCTg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٦</span><div><div class="ex-name">Leg Curl</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Orxowest56U" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cardio-box">🏃‍♀️ <b>في النهاية:</b> Stairmaster أو مشي مائل · <b>10–15 دقيقة · لا HIIT · لا قفزات</b></div>
+  </div>
+
+  <!-- W1 D7 -->
+
+  <div class="day-block">
+    <div class="day-head rest">
+      <div class="day-icon">💤</div>
+      <div class="day-info">
+        <div class="day-label">اليوم السابع</div>
+        <div class="day-name">راحة كاملة + قياس أسبوعي</div>
+        <div class="day-sub">كل جمعة صباحًا على الريق</div>
+      </div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tip-icon">⚖️</div><div class="tip-val">وزن</div><div class="tip-lbl">على الريق</div></div>
+      <div class="tip-card"><div class="tip-icon">📏</div><div class="tip-val">محيطات</div><div class="tip-lbl">خصر + سرة + أرداف</div></div>
+      <div class="tip-card"><div class="tip-icon">📸</div><div class="tip-val">صور</div><div class="tip-lbl">أمامي + جانبي + خلفي</div></div>
+      <div class="tip-card"><div class="tip-icon">📝</div><div class="tip-val">ملاحظات</div><div class="tip-lbl">طاقة + جوع + نوم</div></div>
+    </div>
+    <div class="avoid-box">
+      <div class="avoid-title">⚠️ ممنوع في تمارين الكور طوال المرحلة</div>
+      <ul class="avoid-list">
+        <li>Crunch ثقيل أو Sit-ups</li>
+        <li>Rotary Torso مكثف</li>
+        <li>Leg Raise عنيف</li>
+        <li>Russian Twists بوزن</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- end week1 -->
+
+<!-- ████████████████████████████████████████████████████████
+     WEEK 2
+     ████████████████████████████████████████████████████████ -->
+
+<div class="week-block" id="week2">
+  <div class="week-header w2">
+    <div class="week-num">WEEK TWO · الأسبوع الثاني</div>
+    <div class="week-title">التدرج — زيادة الوزن والحجم</div>
+    <div class="week-desc">⬆ +1–2 كجم في كل تمرين · كارديو 12–15 دقيقة · كور أقوى</div>
+    <div class="week-emoji">⬆️</div>
+    <div class="progress-row">
+      <div class="prog-dot filled"></div>
+      <div class="prog-dot filled"></div>
+      <div class="prog-dot"></div>
+      <div class="prog-dot"></div>
+    </div>
+  </div>
+
+  <div class="info-box gold" style="margin:0 0 12px;">
+    ⬆️ <b>قاعدة الأسبوع الثاني:</b> زيدي الوزن بـ 1–2 كجم في كل تمرين شعرت فيه أن الأسبوع الأول كان سهلًا في المجموعات الأخيرة.
+  </div>
+
+  <!-- W2 D1 -->
+
+  <div class="day-block">
+    <div class="day-head lower">
+      <div class="day-icon">🍑</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الأول</div>
+        <div class="day-name">Lower A — Glute + Quad</div>
+        <div class="day-sub">زيادة الحجم + تدرج الوزن</div>
+      </div>
+    </div>
+    <div class="sec-title">الإحماء</div>
+    <div class="info-box"><b>7 دقائق:</b> Stairmaster خفيف 3 دقائق · 12 Bodyweight Squat · 12 Glute Bridge · Bird Dog × 8</div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Hip Thrust Machine <span class="utag">⬆ وزن</span></div><div class="ex-note">+1–2 كجم عن الأسبوع الأول · Hold 2 ثا</div></div></div></td>
+          <td><span class="ex-sets">4 × 12/10/10/8</span></td>
+          <td><span class="ex-rest">90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/XpA9-JchTE4" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Hack Squat <span class="utag">⬆ وزن</span></div><div class="ex-note">نزول 3 ثواني</div></div></div></td>
+          <td><span class="ex-sets">4 × 10</span></td>
+          <td><span class="ex-rest">90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=0tn5K9NlCfo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Leg Press</div><div class="ex-note">4 مجموعات هذا الأسبوع</div></div></div></td>
+          <td><span class="ex-sets">4 × 10–12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=IZxyjW7MPJQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Leg Extension</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=YyvSfVjQeL0" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Abductor Machine</div><div class="ex-note">4 مجموعات هذا الأسبوع</div></div></div></td>
+          <td><span class="ex-sets">4 × 20</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/uwKOs7z3O3g" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE — زيادة صعوبة</div>
+      <div class="core-row"><span>Dead Bug</span><span class="core-sets">3 × 10 / جهة</span></div>
+      <div class="core-row"><span>Bird Dog</span><span class="core-sets">3 × 10 / جهة</span></div>
+      <div class="core-row"><span>TVA Breathing</span><span class="core-sets">3 × 5 أنفاس</span></div>
+    </div>
+    <div class="cardio-box">🏃‍♀️ <b>بعد التمرين:</b> Stairmaster أو مشي مائل · <b>12–15 دقيقة</b></div>
+  </div>
+
+  <!-- W2 D2 -->
+
+  <div class="day-block">
+    <div class="day-head upper">
+      <div class="day-icon">💪</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الثاني</div>
+        <div class="day-name">Upper Pull + Core</div>
+        <div class="day-sub">زيادة تدريجية في الحجم</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Lat Machine</div></div></div></td>
+          <td><span class="ex-sets">4 × 10–12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=CAwf7n6Luuc" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Low Row Machine <span class="utag">⬆ وزن</span></div><div class="ex-note">4 مجموعات هذا الأسبوع</div></div></div></td>
+          <td><span class="ex-sets">4 × 10–12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=GZbfZ033f74" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Reverse Fly</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/7tgx6QHB0-A" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Arm Curl</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=ykJmrZ5v0Oo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE</div>
+      <div class="core-row"><span>Plank مرتفع</span><span class="core-sets">3 × 30 ثا</span></div>
+      <div class="core-row"><span>Pallof Press</span><span class="core-sets">3 × 12 / جهة</span></div>
+      <div class="core-row"><span>Side Plank على الركب</span><span class="core-sets">2 × 25 ثا / جهة</span></div>
+    </div>
+  </div>
+
+  <!-- W2 D3 Rest -->
+
+  <div class="day-block">
+    <div class="day-head rest">
+      <div class="day-icon">🌿</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الثالث</div>
+        <div class="day-name">راحة نشطة</div>
+      </div>
+    </div>
+    <div class="info-box green" style="margin:12px 16px;">🚶‍♀️ مشي خفيف 30 دقيقة أو Elliptical هادئ · ماء 3 لتر · خطوات 7000+</div>
+  </div>
+
+  <!-- W2 D4 -->
+
+  <div class="day-block">
+    <div class="day-head lower">
+      <div class="day-icon">🔥</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الرابع</div>
+        <div class="day-name">Lower B — Glute + Hamstring</div>
+        <div class="day-sub">زيادة تدريجية</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Romanian Deadlift Smith <span class="utag">⬆ وزن</span></div><div class="ex-note">الظهر محايد دائمًا</div></div></div></td>
+          <td><span class="ex-sets">4 × 10</span></td>
+          <td><span class="ex-rest">90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=JCXUYuzwNrM" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Prone Leg Curl</div></div></div></td>
+          <td><span class="ex-sets">4 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Orxowest56U" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Hip Thrust Machine</div><div class="ex-note">4 مجموعات هذا الأسبوع</div></div></div></td>
+          <td><span class="ex-sets">4 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/XpA9-JchTE4" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Rear Kick Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 15 / رجل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/_yxQwOeb6pg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Adductor Machine</div><div class="ex-note">جديد هذا الأسبوع</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/fwpMYCWdUNY" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cardio-box">🏃‍♀️ <b>بعد التمرين:</b> Stairmaster · <b>12–15 دقيقة</b></div>
+  </div>
+
+  <!-- W2 D5 -->
+
+  <div class="day-block">
+    <div class="day-head upper">
+      <div class="day-icon">✨</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الخامس</div>
+        <div class="day-name">Upper Push + Core</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Chest Press Machine</div><div class="ex-note">4 مجموعات هذا الأسبوع</div></div></div></td>
+          <td><span class="ex-sets">4 × 10–12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=xUm0BiZCWlQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Pectoral Fly</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Z57CtFmRMxA" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Delts Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 12–15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=3VcKaXpzqRo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Arm Extension (Tricep)</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=2-LAMcpzODU" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE</div>
+      <div class="core-row"><span>Plank مستقيم</span><span class="core-sets">3 × 30 ثا</span></div>
+      <div class="core-row"><span>Side Plank</span><span class="core-sets">2 × 25 ثا / جهة</span></div>
+    </div>
+  </div>
+
+  <!-- W2 D6 -->
+
+  <div class="day-block">
+    <div class="day-head lower">
+      <div class="day-icon">💎</div>
+      <div class="day-info">
+        <div class="day-label">اليوم السادس</div>
+        <div class="day-name">Lower C — Shape + Burn</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Leg Press Wide</div><div class="ex-note">4 مجموعات هذا الأسبوع</div></div></div></td>
+          <td><span class="ex-sets">4 × 15</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=IZxyjW7MPJQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Rear Kick Machine</div><div class="ex-note">4 مجموعات</div></div></div></td>
+          <td><span class="ex-sets">4 × 15 / رجل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/_yxQwOeb6pg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Abductor Machine</div></div></div></td>
+          <td><span class="ex-sets">4 × 20</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/uwKOs7z3O3g" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Adductor Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/fwpMYCWdUNY" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Leg Curl</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Orxowest56U" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cardio-box">🏃‍♀️ <b>في النهاية:</b> Stairmaster · <b>15 دقيقة</b></div>
+  </div>
+
+  <!-- W2 D7 -->
+
+  <div class="day-block">
+    <div class="day-head rest">
+      <div class="day-icon">📊</div>
+      <div class="day-info">
+        <div class="day-label">اليوم السابع</div>
+        <div class="day-name">راحة + قياس + مراجعة</div>
+      </div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tip-icon">⚖️</div><div class="tip-val">وزن</div><div class="tip-lbl">صباحًا على الريق</div></div>
+      <div class="tip-card"><div class="tip-icon">📏</div><div class="tip-val">محيطات</div><div class="tip-lbl">3 مناطق</div></div>
+      <div class="tip-card"><div class="tip-icon">📸</div><div class="tip-val">صور</div><div class="tip-lbl">3 اتجاهات</div></div>
+      <div class="tip-card"><div class="tip-icon">🔋</div><div class="tip-val">تقييم</div><div class="tip-lbl">طاقة + جوع + أداء</div></div>
+    </div>
+  </div>
+</div><!-- end week2 -->
+
+<!-- ████████████████████████████████████████████████████████
+     WEEK 3
+     ████████████████████████████████████████████████████████ -->
+
+<div class="week-block" id="week3">
+  <div class="week-header w3">
+    <div class="week-num">WEEK THREE · الأسبوع الثالث</div>
+    <div class="week-title">الذروة — أعلى شدة في المرحلة 🔥</div>
+    <div class="week-desc">5 مجموعات في Hip Thrust · كارديو 15 دقيقة · كور مستوى متقدم</div>
+    <div class="week-emoji">🔥</div>
+    <div class="progress-row">
+      <div class="prog-dot filled"></div>
+      <div class="prog-dot filled"></div>
+      <div class="prog-dot filled"></div>
+      <div class="prog-dot"></div>
+    </div>
+  </div>
+
+  <!-- W3 D1 -->
+
+  <div class="day-block">
+    <div class="day-head lower">
+      <div class="day-icon">🍑</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 3 — اليوم الأول</div>
+        <div class="day-name">Lower A — ذروة Glute + Quad</div>
+        <div class="day-sub">أعلى وزن + أعلى حجم</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Hip Thrust Machine <span class="utag">MAX</span></div><div class="ex-note">5 مجموعات — أثقل وزن تقدر مع حفاظ على التكنيك</div></div></div></td>
+          <td><span class="ex-sets">5 × 12/10/10/8/8</span></td>
+          <td><span class="ex-rest">90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/XpA9-JchTE4" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Hack Squat <span class="utag">⬆ وزن</span></div></div></div></td>
+          <td><span class="ex-sets">4 × 10</span></td>
+          <td><span class="ex-rest">90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=0tn5K9NlCfo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Leg Press</div></div></div></td>
+          <td><span class="ex-sets">4 × 10–12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=IZxyjW7MPJQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Leg Extension</div></div></div></td>
+          <td><span class="ex-sets">4 × 12–15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=YyvSfVjQeL0" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Abductor Machine</div></div></div></td>
+          <td><span class="ex-sets">4 × 20</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/uwKOs7z3O3g" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE — مستوى 3</div>
+      <div class="core-row"><span>Dead Bug</span><span class="core-sets">3 × 12 / جهة</span></div>
+      <div class="core-row"><span>Bird Dog</span><span class="core-sets">3 × 12 / جهة</span></div>
+      <div class="core-row"><span>Plank مستقيم (إذا آمن)</span><span class="core-sets">3 × 30 ثا</span></div>
+    </div>
+    <div class="cardio-box">🏃‍♀️ <b>بعد التمرين:</b> Stairmaster · <b>15 دقيقة</b></div>
+  </div>
+
+  <!-- W3 D2 -->
+
+  <div class="day-block">
+    <div class="day-head upper">
+      <div class="day-icon">💪</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 3 — اليوم الثاني</div>
+        <div class="day-name">Upper Pull + Core — ذروة</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Lat Machine</div></div></div></td>
+          <td><span class="ex-sets">4 × 10</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=CAwf7n6Luuc" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Low Row Machine <span class="utag">⬆ وزن</span></div></div></div></td>
+          <td><span class="ex-sets">4 × 10</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=GZbfZ033f74" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Vertical Traction</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=CAwf7n6Luuc" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Reverse Fly</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/7tgx6QHB0-A" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Arm Curl</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=ykJmrZ5v0Oo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE</div>
+      <div class="core-row"><span>Plank مستقيم</span><span class="core-sets">3 × 35 ثا</span></div>
+      <div class="core-row"><span>Pallof Press</span><span class="core-sets">3 × 12 / جهة</span></div>
+      <div class="core-row"><span>Side Plank</span><span class="core-sets">3 × 25 ثا / جهة</span></div>
+    </div>
+  </div>
+
+  <!-- W3 D3 -->
+
+  <div class="day-block">
+    <div class="day-head rest">
+      <div class="day-icon">🌿</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 3 — اليوم الثالث</div>
+        <div class="day-name">راحة نشطة</div>
+      </div>
+    </div>
+    <div class="info-box green" style="margin:12px 16px;">🚶‍♀️ مشي 30 دقيقة · ماء 3 لتر · تمدد خفيف للفخذ والأرداف</div>
+  </div>
+
+  <!-- W3 D4 -->
+
+  <div class="day-block">
+    <div class="day-head lower">
+      <div class="day-icon">🔥</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 3 — اليوم الرابع</div>
+        <div class="day-name">Lower B — Glute + Hamstring ذروة</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Romanian Deadlift Smith <span class="utag">⬆ وزن</span></div></div></div></td>
+          <td><span class="ex-sets">4 × 10</span></td>
+          <td><span class="ex-rest">90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=JCXUYuzwNrM" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Prone Leg Curl</div></div></div></td>
+          <td><span class="ex-sets">4 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Orxowest56U" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Hip Thrust Machine <span class="utag">⬆ وزن</span></div></div></div></td>
+          <td><span class="ex-sets">4 × 10</span></td>
+          <td><span class="ex-rest">90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/XpA9-JchTE4" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Rear Kick Machine</div></div></div></td>
+          <td><span class="ex-sets">4 × 12 / رجل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/_yxQwOeb6pg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Multi Hip + Adductor</div></div></div></td>
+          <td><span class="ex-sets">3 × 15 / كل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/YBWO5nTxCTg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cardio-box">🏃‍♀️ <b>بعد التمرين:</b> Stairmaster · <b>15 دقيقة</b></div>
+  </div>
+
+  <!-- W3 D5 -->
+
+  <div class="day-block">
+    <div class="day-head upper">
+      <div class="day-icon">✨</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 3 — اليوم الخامس</div>
+        <div class="day-name">Upper Push + Core</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Chest Press Machine</div></div></div></td>
+          <td><span class="ex-sets">4 × 10–12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=xUm0BiZCWlQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Pectoral Fly</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Z57CtFmRMxA" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Delts Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 12–15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=3VcKaXpzqRo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Arm Extension</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=2-LAMcpzODU" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE</div>
+      <div class="core-row"><span>Incline March</span><span class="core-sets">3 × 12</span></div>
+      <div class="core-row"><span>Plank مستقيم</span><span class="core-sets">3 × 35 ثا</span></div>
+    </div>
+  </div>
+
+  <!-- W3 D6 -->
+
+  <div class="day-block">
+    <div class="day-head lower">
+      <div class="day-icon">💎</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 3 — اليوم السادس</div>
+        <div class="day-name">Lower C — Shape + Burn MAX</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Leg Press Wide</div></div></div></td>
+          <td><span class="ex-sets">4 × 15</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=IZxyjW7MPJQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Rear Kick Machine</div></div></div></td>
+          <td><span class="ex-sets">4 × 15 / رجل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/_yxQwOeb6pg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Abductor Machine</div><div class="ex-note">5 مجموعات — ذروة الشد الجانبي</div></div></div></td>
+          <td><span class="ex-sets">5 × 20</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/uwKOs7z3O3g" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Adductor Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/fwpMYCWdUNY" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٥</span><div><div class="ex-name">Leg Curl</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Orxowest56U" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cardio-box">🏃‍♀️ <b>في النهاية:</b> Stairmaster · <b>15 دقيقة</b></div>
+  </div>
+
+  <!-- W3 D7 -->
+
+  <div class="day-block">
+    <div class="day-head rest">
+      <div class="day-icon">📊</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 3 — اليوم السابع</div>
+        <div class="day-name">راحة + قياس + التجهيز للـ Deload</div>
+      </div>
+    </div>
+    <div class="info-box gold" style="margin:12px 16px;">
+      الأسبوع القادم Deload ذكي — تنخفض الشدة إلى 60–70% لكن يبقى التدريب. الهدف: استشفاء + ترسيخ النتائج + التجهيز للمرحلة التالية.
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tip-icon">⚖️</div><div class="tip-val">وزن</div><div class="tip-lbl">صباحًا على الريق</div></div>
+      <div class="tip-card"><div class="tip-icon">📏</div><div class="tip-val">محيطات</div><div class="tip-lbl">3 مناطق</div></div>
+      <div class="tip-card"><div class="tip-icon">📸</div><div class="tip-val">صور</div><div class="tip-lbl">3 اتجاهات</div></div>
+      <div class="tip-card"><div class="tip-icon">🔄</div><div class="tip-val">تجهيز</div><div class="tip-lbl">للأسبوع الأخير</div></div>
+    </div>
+  </div>
+</div><!-- end week3 -->
+
+<!-- ████████████████████████████████████████████████████████
+     WEEK 4 — DELOAD
+     ████████████████████████████████████████████████████████ -->
+
+<div class="week-block" id="week4">
+  <div class="week-header w4">
+    <div class="week-num">WEEK FOUR · الأسبوع الرابع — DELOAD</div>
+    <div class="week-title">Deload ذكي + التقييم النهائي 🏁</div>
+    <div class="week-desc">60–70% من وزن الأسبوع 3 · 3 مجموعات فقط · كارديو 10 دقائق · إحساس لا وزن</div>
+    <div class="week-emoji">🏁</div>
+    <div class="progress-row">
+      <div class="prog-dot filled"></div>
+      <div class="prog-dot filled"></div>
+      <div class="prog-dot filled"></div>
+      <div class="prog-dot filled"></div>
+    </div>
+  </div>
+
+  <div class="info-box gold" style="margin:0 0 12px;">
+    <b>قاعدة Deload:</b> نفس التمارين · الوزن 60–70% · 3 مجموعات فقط · التركيز على الإحساس والتكنيك لا على الأداء.
+  </div>
+
+  <!-- W4 D1 -->
+
+  <div class="day-block">
+    <div class="day-head deload">
+      <div class="day-icon">🌙</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 4 — Deload — اليوم الأول</div>
+        <div class="day-name">Lower A — شد واسترخاء <span class="dtag">60–70%</span></div>
+        <div class="day-sub">الإحساس بالأرداف أهم من الوزن</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Hip Thrust Machine <span class="dtag">60–70%</span></div><div class="ex-note">ركيز على الإحساس بالأرداف لا على الوزن</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/XpA9-JchTE4" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Hack Squat <span class="dtag">60–70%</span></div></div></div></td>
+          <td><span class="ex-sets">3 × 10</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=0tn5K9NlCfo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Leg Press</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=IZxyjW7MPJQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Abductor Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 20</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/uwKOs7z3O3g" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE</div>
+      <div class="core-row"><span>Dead Bug</span><span class="core-sets">3 × 10 / جهة</span></div>
+      <div class="core-row"><span>Bird Dog</span><span class="core-sets">3 × 10 / جهة</span></div>
+    </div>
+    <div class="cardio-box">🏃‍♀️ كارديو خفيف · <b>10 دقائق فقط</b></div>
+  </div>
+
+  <!-- W4 D2 -->
+
+  <div class="day-block">
+    <div class="day-head deload">
+      <div class="day-icon">💪</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 4 — Deload — اليوم الثاني</div>
+        <div class="day-name">Upper Pull <span class="dtag">60–70%</span></div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Lat Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=CAwf7n6Luuc" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Low Row Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=GZbfZ033f74" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Reverse Fly</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/7tgx6QHB0-A" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE</div>
+      <div class="core-row"><span>Plank</span><span class="core-sets">3 × 30 ثا</span></div>
+      <div class="core-row"><span>Pallof Press</span><span class="core-sets">2 × 12 / جهة</span></div>
+    </div>
+  </div>
+
+  <!-- W4 D3 Rest -->
+
+  <div class="day-block">
+    <div class="day-head rest">
+      <div class="day-icon">🌿</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 4 — اليوم الثالث</div>
+        <div class="day-name">راحة نشطة</div>
+      </div>
+    </div>
+    <div class="info-box green" style="margin:12px 16px;">🧘‍♀️ تمدد + مشي 30 دقيقة هادئة · ماء 3 لتر</div>
+  </div>
+
+  <!-- W4 D4 -->
+
+  <div class="day-block">
+    <div class="day-head deload">
+      <div class="day-icon">🔥</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 4 — Deload — اليوم الرابع</div>
+        <div class="day-name">Lower B <span class="dtag">60–70%</span></div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Romanian Deadlift Smith</div></div></div></td>
+          <td><span class="ex-sets">3 × 10</span></td>
+          <td><span class="ex-rest">90 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=JCXUYuzwNrM" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Prone Leg Curl</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=Orxowest56U" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Hip Thrust Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/XpA9-JchTE4" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٤</span><div><div class="ex-name">Rear Kick + Multi Hip</div></div></div></td>
+          <td><span class="ex-sets">3 × 12 / كل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/_yxQwOeb6pg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cardio-box">🏃‍♀️ كارديو خفيف · <b>10 دقائق فقط</b></div>
+  </div>
+
+  <!-- W4 D5 -->
+
+  <div class="day-block">
+    <div class="day-head deload">
+      <div class="day-icon">✨</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 4 — Deload — اليوم الخامس</div>
+        <div class="day-name">Upper Push <span class="dtag">60–70%</span></div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Chest Press Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=xUm0BiZCWlQ" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Delts Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=3VcKaXpzqRo" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Arm Extension</div></div></div></td>
+          <td><span class="ex-sets">3 × 12</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/watch?v=2-LAMcpzODU" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="core-box">
+      <div class="core-title">🛡️ CORE ختامي</div>
+      <div class="core-row"><span>Dead Bug</span><span class="core-sets">3 × 10 / جهة</span></div>
+      <div class="core-row"><span>Side Plank</span><span class="core-sets">3 × 30 ثا / جهة</span></div>
+      <div class="core-row"><span>TVA Breathing</span><span class="core-sets">5 أنفاس عميقة</span></div>
+    </div>
+  </div>
+
+  <!-- W4 D6 -->
+
+  <div class="day-block">
+    <div class="day-head deload">
+      <div class="day-icon">🏆</div>
+      <div class="day-info">
+        <div class="day-label">الأسبوع 4 — الجلسة الختامية</div>
+        <div class="day-name">Lower C — الإحساس الأخير</div>
+        <div class="day-sub">اختمي المرحلة بإحساس لا بوزن</div>
+      </div>
+    </div>
+    <table class="ex-table">
+      <thead><tr><th>التمرين</th><th>المجموعات × التكرار</th><th>راحة</th><th>فيديو</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">١</span><div><div class="ex-name">Hip Thrust Machine</div><div class="ex-note">أحسي بكل عضلة — اختمي بإحساس كامل</div></div></div></td>
+          <td><span class="ex-sets">3 × 15</span></td>
+          <td><span class="ex-rest">75 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/XpA9-JchTE4" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٢</span><div><div class="ex-name">Abductor + Adductor</div></div></div></td>
+          <td><span class="ex-sets">3 × 20 / كل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/uwKOs7z3O3g" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell"><span class="ex-num">٣</span><div><div class="ex-name">Rear Kick Machine</div></div></div></td>
+          <td><span class="ex-sets">3 × 15 / رجل</span></td>
+          <td><span class="ex-rest">60 ثا</span></td>
+          <td><a class="yt-btn" href="https://www.youtube.com/shorts/_yxQwOeb6pg" target="_blank"><span class="yt-icon">▶</span> يوتيوب</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cardio-box">🏃‍♀️ كارديو ختامي · <b>10 دقائق Stairmaster — نهاية المرحلة الأولى</b></div>
+  </div>
+
+  <!-- W4 D7 — FINAL -->
+
+  <div class="day-block">
+    <div class="day-head deload">
+      <div class="day-icon">🌟</div>
+      <div class="day-info">
+        <div class="day-label">اليوم الأخير — نهاية المرحلة الأولى</div>
+        <div class="day-name">التقييم النهائي الشامل</div>
+        <div class="day-sub">قياس + مقارنة + تخطيط المرحلة الثانية</div>
+      </div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tip-icon">⚖️</div><div class="tip-val">الوزن النهائي</div><div class="tip-lbl">مقارنة باليوم الأول</div></div>
+      <div class="tip-card"><div class="tip-icon">📏</div><div class="tip-val">القياسات</div><div class="tip-lbl">خصر + سرة + أرداف</div></div>
+      <div class="tip-card"><div class="tip-icon">📸</div><div class="tip-val">صور Progress</div><div class="tip-lbl">3 اتجاهات</div></div>
+      <div class="tip-card"><div class="tip-icon">✅</div><div class="tip-val">تقييم كامل</div><div class="tip-lbl">ما تغير وما يحتاج تعديل</div></div>
+    </div>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-icon">⚖️</div><div class="result-title">2–3.5 كجم</div><div class="result-sub">نزول متوقع في 4 أسابيع</div></div>
+      <div class="result-card"><div class="result-icon">🍑</div><div class="result-title">رفع واضح</div><div class="result-sub">تحسن ملحوظ في شكل الأرداف</div></div>
+      <div class="result-card"><div class="result-icon">👗</div><div class="result-title">خصر أنعم</div><div class="result-sub">فرق واضح بالمقاس</div></div>
+      <div class="result-card"><div class="result-icon">💪</div><div class="result-title">جسم أشد</div><div class="result-sub">شد عضلي واضح عمومًا</div></div>
+    </div>
+    <div class="final-banner">
+      <h3>🌟 أنهيتِ المرحلة الأولى بنجاح</h3>
+      <p>بناءً على النتائج والقياسات نبني المرحلة الثانية بشدة أعلى وأهداف أدق</p>
+    </div>
+  </div>
+</div><!-- end week4 -->
+
+<!-- ████████████████████████████████████████████████████████
+     NUTRITION
+     ████████████████████████████████████████████████████████ -->
+
+<div class="week-block" id="nutrition">
+  <div class="week-header" style="background:linear-gradient(135deg,#2a1810,#120a04);border:1.5px solid #c4703d;">
+    <div class="week-num">NUTRITION · التغذية اليومية</div>
+    <div class="week-title">الخطة الغذائية — 4 أسابيع</div>
+    <div class="week-desc">بروتين ثابت · كارب متوازن · سعرات ذكية يومي تمرين وراحة</div>
+    <div class="week-emoji">🥗</div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-head nutri">
+      <div class="day-icon">📊</div>
+      <div class="day-info">
+        <div class="day-label">الماكروز اليومية</div>
+        <div class="day-name">أيام التمرين vs أيام الراحة</div>
+      </div>
+    </div>
+    <div class="macro-wrap">
+      <table class="macro-table">
+        <thead>
+          <tr>
+            <th>اليوم</th>
+            <th>السعرات</th>
+            <th>بروتين</th>
+            <th>كارب</th>
+            <th>دهون</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <b style="color:#f0ede6;">أيام التمرين</b>
+              <div style="font-size:10px;color:#6a6050;margin-top:3px;line-height:1.5;">مجموع أكلك اليومي<br>التزمي بالجدول بدون زيادة أو نقص</div>
+            </td>
+            <td><span class="macro-val">1700–1750</span></td>
+            <td>135 جم</td>
+            <td>160 جم</td>
+            <td>50 جم</td>
+          </tr>
+          <tr>
+            <td>
+              <b style="color:#f0ede6;">أيام الراحة</b>
+              <div style="font-size:10px;color:#6a6050;margin-top:3px;line-height:1.5;">التزمي بنفس النظام<br>أو حسب التوجيه داخل الجدول</div>
+            </td>
+            <td><span class="macro-val">1550–1600</span></td>
+            <td>135 جم</td>
+            <td>110–120 جم</td>
+            <td>55 جم</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info-box" style="margin:0 16px 14px;">
+      <b>ملاحظة:</b> في أيام التمرين السعرات والكارب أعلى لدعم الأداء — وفي أيام الراحة نقلل الكارب ونثبت البروتين
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-head nutri">
+      <div class="day-icon">🍽️</div>
+      <div class="day-info">
+        <div class="day-label">أيام التمرين</div>
+        <div class="day-name">5 وجبات — السعرات في أيام التمرين: 1700–1750</div>
+      </div>
+    </div>
+    <div class="meal-grid">
+      <div class="meal-card">
+        <div class="meal-head"><span>🌅</span> الوجبة الأولى — فطور</div>
+        <div class="meal-body">
+          <div class="meal-item">2 بيض كامل + 3 بياض</div>
+          <div class="meal-item">2 توست أسمر</div>
+          <div class="meal-item">خضار (خيار · طماطم · خس)</div>
+          <div class="meal-item">قهوة بدون سكر أو دايت</div>
+          <div class="alt-lbl">بديل</div>
+          <div class="meal-item">60 جم شوفان + 1 سكوب بروتين + 1 م.ص زبدة فول</div>
+        </div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-head"><span>🍎</span> الوجبة الثانية — سناك</div>
+        <div class="meal-body">
+          <div class="meal-item">زبادي يوناني لايت 170 جم</div>
+          <div class="meal-item">1 فاكهة</div>
+          <div class="meal-item">10 جم لوز</div>
+          <div class="alt-lbl">بديل</div>
+          <div class="meal-item">لبنة لايت 60 جم + 2 توست + خيار</div>
+        </div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-head"><span>🍚</span> الوجبة الثالثة — غداء</div>
+        <div class="meal-body">
+          <div class="meal-item">150 جم دجاج / لحم خالي / سمك</div>
+          <div class="meal-item">150 جم رز مطبوخ</div>
+          <div class="meal-item">سلطة كبيرة + 1 م.ص زيت زيتون</div>
+          <div class="alt-lbl">بدائل الكارب</div>
+          <div class="meal-item">150 رز = 180 بطاطس = 120 مكرونة = 2 توست</div>
+        </div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-head"><span>⚡</span> الوجبة الرابعة — قبل/بعد التمرين</div>
+        <div class="meal-body">
+          <div class="meal-item">150 جم بروتين</div>
+          <div class="meal-item">130 جم رز أو بطاطس</div>
+          <div class="meal-item">خضار</div>
+          <div class="alt-lbl">بديل سريع</div>
+          <div class="meal-item">ساندويتش تونة/دجاج + خبز عربي صغير + فاكهة</div>
+        </div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-head"><span>🌙</span> الوجبة الخامسة — عشاء</div>
+        <div class="meal-body">
+          <div class="meal-item">120–150 جم تونة / دجاج / زبادي بروتين</div>
+          <div class="meal-item">سلطة</div>
+          <div class="meal-item">1 توست أو 80 جم بطاطس</div>
+          <div class="alt-lbl">بديل</div>
+          <div class="meal-item">جبنة قريش 150 جم + خيار وخس + 2 أرز كيك</div>
+        </div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-head"><span>🥒</span> بين الوجبات — جوعانة؟</div>
+        <div class="meal-body">
+          <div class="meal-item">خيار · خس · جزر</div>
+          <div class="meal-item">زبادي لايت</div>
+          <div class="meal-item">فشار بدون زيت كثير</div>
+          <div class="meal-item">قهوة · شاي · ماء</div>
+        </div>
+      </div>
+    </div>
+    <div class="avoid-box" style="margin:0 16px 14px;">
+      <div class="avoid-title">⚠️ ممنوع أو نخففه</div>
+      <ul class="avoid-list">
+        <li>عصائر محلاة</li>
+        <li>حلويات يومية</li>
+        <li>تشيت مفتوح</li>
+        <li>لقيمات أثناء الطبخ</li>
+        <li>قهوة محلاة كاملة السعرات</li>
+        <li>أكل عشوائي ليلًا</li>
+        <li>صوصات كريمية</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- أيام الراحة -->
+
+  <div class="day-block">
+    <div class="day-head nutri">
+      <div class="day-icon">🌿</div>
+      <div class="day-info">
+        <div class="day-label">أيام الراحة</div>
+        <div class="day-name">4 وجبات — السعرات: 1550–1600</div>
+      </div>
+    </div>
+    <div class="meal-grid">
+      <div class="meal-card">
+        <div class="meal-head"><span>🌅</span> الوجبة الأولى — فطور</div>
+        <div class="meal-body">
+          <div class="meal-item">2 بيض كامل + 4 بياض</div>
+          <div class="meal-item">توست</div>
+        </div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-head"><span>🍚</span> الوجبة الثانية — غداء</div>
+        <div class="meal-body">
+          <div class="meal-item">150 جم دجاج</div>
+          <div class="meal-item">100 جم رز</div>
+          <div class="meal-item">سلطة + 10 جم زيت زيتون</div>
+        </div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-head"><span>🍎</span> الوجبة الثالثة — سناك</div>
+        <div class="meal-body">
+          <div class="meal-item">زبادي يوناني</div>
+          <div class="meal-item">15 جم لوز</div>
+        </div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-head"><span>🌙</span> الوجبة الرابعة — عشاء</div>
+        <div class="meal-body">
+          <div class="meal-item">160 جم دجاج أو سمك</div>
+          <div class="meal-item">100 جم بطاطس أو توست</div>
+          <div class="meal-item">خضار</div>
+        </div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-head"><span>✨</span> سناك اختياري</div>
+        <div class="meal-body">
+          <div class="meal-item">زبادي بروتين</div>
+          <div class="alt-lbl">بديل</div>
+          <div class="meal-item">واي بروتين (Whey)</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-box" style="margin:0 16px 14px;border-color:#2a4a28;background:#0a1c10;color:#70b888;">
+      <b style="color:#90d8a8;">ملاحظة:</b> الكارب أقل من أيام التمرين — الالتزام مهم
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-head nutri">
+      <div class="day-icon">🔄</div>
+      <div class="day-info">
+        <div class="day-label">جدول البدائل</div>
+        <div class="day-name">البدائل الغذائية</div>
+      </div>
+    </div>
+    <div class="macro-wrap">
+      <table class="macro-table">
+        <thead><tr><th>الأصل</th><th>يعادله</th></tr></thead>
+        <tbody>
+          <tr><td>150 جم دجاج</td><td>150 سمك = 140 تونة مصفاة = 150 لحم خالي = 170 زبادي بروتين</td></tr>
+          <tr><td>100 جم رز مطبوخ</td><td>130 بطاطس = 80 مكرونة = 1.5 توست = 30 جم شوفان</td></tr>
+          <tr><td>10 جم لوز</td><td>1 م.ص زبدة فول = 1 م.ص زيت زيتون = 35–40 جم أفوكادو</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-head nutri">
+      <div class="day-icon">💊</div>
+      <div class="day-info">
+        <div class="day-label">المكملات</div>
+        <div class="day-name">المناسب منها</div>
+      </div>
+    </div>
+    <div class="info-box" style="margin:12px 16px 14px;">
+      <b>مناسب:</b> Whey Protein · Creatine 3–5 جم يوميًا · Omega-3 · Vitamin D إذا ناقص
+      <br><br>
+      <b>ملاحظة الكرياتين:</b> مناسب جدًا للنساء — لا "ينفخ دهون" — قد يزيد احتباس ماء عضلي بسيط مفيد للأداء.
+    </div>
+  </div>
+
+</div><!-- end nutrition -->
+
+<div class="print-footer">
+  Reset &amp; Shape Program · 4 أسابيع كاملة · القياس كل جمعة صباحًا على الريق
+</div>
+
+</div><!-- end content-wrap -->
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
